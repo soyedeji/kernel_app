@@ -1,2 +1,16 @@
-<h1>Breeds#index</h1>
-<p>Find me in app/views/breeds/index.html.erb</p>
+<h1>Dog Breeds</h1>
+<%= form_with url: search_breeds_path, method: :get do %>
+  <%= label_tag :query, "Search for a breed:" %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<div class="row">
+  <% @breeds.each do |breed| %>
+    <div class="col-md-4">
+      <h2><%= link_to breed.name, breed_path(breed) %></h2>
+      <img src="<%= breed.images.first.url %>" alt="<%= breed.name %>">
+    </div>
+  <% end %>
+</div>
+
