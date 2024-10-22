@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .breed-img {
+  width: 100%; /* Ensures the image takes up the full width of the column */
+  height: 300px; /* Set a fixed height for consistency */
+  object-fit: cover; /* Ensures the image is cropped to fit the size */
+}
+
+.breed-item {
+  margin-bottom: 0; /* Removes margin below each breed item */
+}
+
