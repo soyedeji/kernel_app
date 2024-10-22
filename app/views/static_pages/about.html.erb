@@ -1,2 +1,65 @@
 <h1>About Kernel App</h1>
-<p>This will contain information about the application.</p>
+
+<p>
+  Kernel App is a Ruby on Rails application that allows users to search for dog breeds and display random images of the searched breed. The app pulls data from external APIs and organizes it into a structured format that can be navigated through the user interface.
+</p>
+
+<h2>🌟 🕯️ 1.1 - Describe Datasets</h2>
+<p>
+  For this project, we are using the Dog CEO API as our main data source. This API provides a comprehensive list of dog breeds along with images for each breed. The dataset is structured as follows:
+</p>
+<ul>
+  <li><strong>Dog Breeds:</strong> Each breed has a name and may have multiple images associated with it.</li>
+  <li><strong>Images:</strong> Each breed can have multiple images, which are pulled randomly from the API.</li>
+</ul>
+<p>
+  The <strong>Breed</strong> model contains fields for:
+</p>
+<ul>
+  <li><strong>Name:</strong> The name of the breed.</li>
+  <li><strong>Description:</strong> A brief description or characteristics of the breed (optional).</li>
+</ul>
+<p>
+  The <strong>Image</strong> model contains fields for:
+</p>
+<ul>
+  <li><strong>URL:</strong> The link to the image of the breed.</li>
+  <li><strong>Breed:</strong> A reference to the associated breed.</li>
+</ul>
+<p>
+  These datasets are integrated by creating relationships between the <strong>Breed</strong> and <strong>Image</strong> models. Each breed can have many associated images (one-to-many relationship).
+</p>
+
+<h2>💡 1.2 - Database ERD</h2>
+<p>
+  The database for Kernel App is designed with the following tables:
+</p>
+<ul>
+  <li><strong>Breeds:</strong> This table stores the list of dog breeds.</li>
+  <li><strong>Images:</strong> This table stores the URLs of images for each breed and includes a foreign key to the <strong>Breeds</strong> table.</li>
+</ul>
+<p>
+  Below is a description of the database schema:
+</p>
+<ul>
+  <li><strong>Breeds Table:</strong> Contains columns for the breed's name and a description.</li>
+  <li><strong>Images Table:</strong> Contains columns for the image URL and a foreign key to the associated breed.</li>
+</ul>
+<p>
+  The following is the basic ERD (Entity Relationship Diagram) for the application:
+</p>
+<p>
+  <strong>ERD:</strong>
+</p>
+<ul>
+  <li><strong>Breed:</strong> <em>has_many</em> images</li>
+  <li><strong>Image:</strong> <em>belongs_to</em> a breed</li>
+</ul>
+<p>
+  This structure allows for easy searching and retrieval of data, as each breed can be associated with multiple images, and the images are directly linked to their respective breeds.
+</p>
+
+<h2>Project Overview</h2>
+<p>
+  The Kernel App project demonstrates the integration of external APIs into a Ruby on Rails application. By utilizing the Dog CEO API, the app provides a simple interface for users to search for dog breeds and view images of those breeds. This project also highlights the use of database relationships, validations, and efficient data handling within a Rails framework.
+</p>
