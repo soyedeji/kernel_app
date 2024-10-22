@@ -34,6 +34,8 @@ gem "bootsnap", require: false
 gem "faker"
 gem "http"
 gem "kaminari" # For pagination later on
+gem "sqlite3"
+
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
