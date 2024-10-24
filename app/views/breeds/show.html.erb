@@ -4,10 +4,18 @@
   <%= link_to 'Back to Home', root_path, class: 'btn btn-primary' %>
 </div>
 
-<div class="grid">
-  <% @breed.images.each do |image| %>
-    <div class="image-item">
-      <img src="<%= image.url %>" alt="<%= @breed.name %>">
-    </div>
-  <% end %>
-</div>
+<!-- Check if the breed has images -->
+<% if @breed.images.any? %>
+  <h2>Images of <%= @breed.name %></h2>
+  <div class="row gx-0">
+    <% @breed.images.each do |image| %>
+      <div class="col-md-4 p-0">
+        <div class="image-item">
+          <img src="<%= image.url %>" alt="<%= @breed.name %>" class="breed-img">
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No images available for <%= @breed.name %>.</p>
+<% end %>
