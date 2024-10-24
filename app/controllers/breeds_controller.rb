@@ -17,6 +17,7 @@ class BreedsController < ApplicationController
   end
 
   def search
-    @breeds = Breed.where("name LIKE ?", "%#{params[:query]}%")
+    @breeds = Breed.where("name LIKE ?", "%#{params[:query]}%").page(params[:page]).per(9)
+    render :index
   end
 end
