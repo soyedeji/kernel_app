@@ -29,3 +29,18 @@
   margin-bottom: 20px;
 }
 
+.alphabet-filter {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.alphabet-filter a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.alphabet-filter a:hover {
+  text-decoration: underline;
+}
+
