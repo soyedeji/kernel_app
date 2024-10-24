@@ -1,32 +1,49 @@
+<!-- Page Title -->
 <h1>Dog Breeds</h1>
 
-<!-- Alphabetical filter -->
+<!-- Alphabetical filter for breeds -->
+<!-- Generates a link for each letter from A to Z to filter breeds by their first letter -->
 <div class="alphabet-filter">
+  <!-- Link to show all breeds -->
   <%= link_to "All", breeds_path %> |
+
+  <!-- Loop through each letter from A to Z and create a link for filtering -->
   <% ('A'..'Z').each do |letter| %>
     <%= link_to letter, breeds_path(letter: letter) %> |
   <% end %>
 </div>
 
-<!-- Search form -->
+<!-- Search form for finding breeds by name -->
+<!-- Allows users to search for a specific breed by entering a query -->
 <%= form_with url: search_breeds_path, method: :get do %>
+  <!-- Label for search input field -->
   <%= label_tag :query, "Search for a breed:" %>
+
+  <!-- Text field for the search query -->
   <%= text_field_tag :query, params[:query] %>
+
+  <!-- Submit button to trigger the search -->
   <%= submit_tag "Search" %>
 <% end %>
 
+<!-- Display list of breeds in a responsive grid layout -->
 <div class="row gx-0">
+  <!-- Loop through each breed and display its name and image -->
   <% @breeds.each do |breed| %>
     <div class="col-md-4 p-0">
       <div class="breed-item">
+        <!-- Link to breed's details page -->
         <h2><%= link_to breed.name, breed_path(breed) %></h2>
+
+        <!-- Display the first image of the breed -->
         <img src="<%= breed.images.first.url %>" alt="<%= breed.name %>" class="breed-img">
       </div>
     </div>
   <% end %>
 </div>
 
-<!-- Pagination -->
+<!-- Pagination for navigating through multiple pages of breeds -->
 <div class="pagination">
+  <!-- Automatically generate pagination controls based on the @breeds object -->
   <%= paginate @breeds %>
 </div>
