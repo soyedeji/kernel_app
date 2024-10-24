@@ -15,16 +15,19 @@
 
 <!-- Search form for finding breeds by name -->
 <!-- Allows users to search for a specific breed by entering a query -->
-<%= form_with url: search_breeds_path, method: :get do %>
-  <!-- Label for search input field -->
-  <%= label_tag :query, "Search for a breed:" %>
+<div class="search-form d-flex justify-content-center">
+  <%= form_with url: search_breeds_path, method: :get do %>
+    <!-- Label for search input field -->
+    <%= label_tag :query, "Search for a breed:" %>
 
-  <!-- Text field for the search query -->
-  <%= text_field_tag :query, params[:query] %>
+    <!-- Text field for the search query -->
+    <%= text_field_tag :query, params[:query] %>
 
-  <!-- Submit button to trigger the search -->
-  <%= submit_tag "Search" %>
-<% end %>
+    <!-- Submit button to trigger the search -->
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
+
 
 <!-- Display list of breeds in a responsive grid layout -->
 <div class="row gx-0">

@@ -65,3 +65,7 @@
 .breed-item a:hover {
   text-decoration: underline;
 }
+
+.search-form {
+  margin-bottom: 20px;
+}
