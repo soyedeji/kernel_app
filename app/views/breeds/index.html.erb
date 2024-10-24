@@ -6,13 +6,18 @@
   <%= submit_tag "Search" %>
 <% end %>
 
-<div class="row gx-0"> <!-- 'gx-0' removes gutter (spacing between columns) -->
+<div class="row gx-0">
   <% @breeds.each do |breed| %>
-    <div class="col-md-4 p-0"> <!-- 'p-0' removes padding for each column -->
+    <div class="col-md-4 p-0">
       <div class="breed-item">
         <h2><%= link_to breed.name, breed_path(breed) %></h2>
         <img src="<%= breed.images.first.url %>" alt="<%= breed.name %>" class="img-fluid breed-img">
       </div>
     </div>
   <% end %>
+</div>
+
+<!-- add pagination controls -->
+<div class="pagination">
+  <%= paginate @breeds %>
 </div>

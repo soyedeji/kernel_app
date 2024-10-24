@@ -33,7 +33,7 @@ gem "bootsnap", require: false
 
 gem "faker"
 gem "http"
-gem "kaminari" # For pagination later on
+gem "kaminari" # for pagination
 gem "sqlite3"
 
 
