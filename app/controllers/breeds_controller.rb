@@ -21,10 +21,7 @@ class BreedsController < ApplicationController
 
   # Action for searching breeds (via search form)
   def search
-    # Filter breeds based on the search query provided
     @breeds = Breed.where("name LIKE ?", "%#{params[:query]}%").page(params[:page]).per(9)
-
-    # Render the index view to display the filtered search results
-    render :index
+    render :search  # Render the search results in search.html.erb
   end
 end
